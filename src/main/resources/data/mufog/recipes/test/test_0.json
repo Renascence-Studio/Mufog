@@ -3,23 +3,18 @@
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
-        "create"
-      ]
-    },
-    {
-      "condition": "fabric:item_tags_populated",
-      "values": [
-        "c:ingots/iron"
+        "test"
       ]
     }
   ],
   "type": "mufog:forging",
   "ingredient": {
-    "tag": "c:ingots/iron"
+    "item": "minecraft:redstone_ore"
   },
   "processtime": 5,
-  "level": 2,
+  "level": 1,
   "result": {
-    "item": "create:iron_sheet"
+    "item": "minecraft:redstone",
+    "count": 1
   }
 }
