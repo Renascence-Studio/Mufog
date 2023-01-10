@@ -1,0 +1,1 @@
+hlft.fabric.mufog.compat.kubejs.MufogKJSPlugin

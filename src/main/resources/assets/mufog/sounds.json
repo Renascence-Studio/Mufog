@@ -1,0 +1,20 @@
+{
+  "forging": {
+    "sounds": [
+      {
+        "name": "minecraft:block.anvil.use",
+        "type": "event"
+      }
+    ],
+    "subtitle": "mufog.subtitle.forging"
+  },
+  "forging_fail": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.item.break",
+        "type": "event"
+      }
+    ],
+    "subtitle": "mufog.subtitle.forging_fail"
+  }
+}

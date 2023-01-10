@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "mufog",
+  "version": "${version}",
+  "name": "Mufog",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/mufog/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "hlft.fabric.mufog.client.MufogClient"
+    ],
+    "main": [
+      "hlft.fabric.mufog.MufogMod"
+    ],
+    "rei": [
+      "hlft.fabric.mufog.compat.rei.MufogREIPlugin"
+    ],
+    "emi": [
+      "hlft.fabric.mufog.compat.emi.MufogEMIPlugin"
+    ]
+  },
+  "mixins": [
+    "mufog.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    },
+    {
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/iron"
+      ]
+    }
+  ],
+  "type": "mufog:forging",
+  "ingredient": {
+    "tag": "c:ingots/iron"
+  },
+  "processtime": 5,
+  "level": 2,
+  "result": {
+    "item": "create:iron_sheet"
+  }
+}

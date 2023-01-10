@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north": { "model": "mufog:block/forging_anvil", "uvlock": true },
+    "facing=east":  { "model": "mufog:block/forging_anvil", "y":  90, "uvlock": true },
+    "facing=south": { "model": "mufog:block/forging_anvil", "y": 180, "uvlock": true },
+    "facing=west":  { "model": "mufog:block/forging_anvil", "y": 270, "uvlock": true }
+  }
+}
+

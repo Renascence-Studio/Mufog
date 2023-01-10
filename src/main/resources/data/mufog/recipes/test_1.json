@@ -1,0 +1,15 @@
+{
+  "type": "mufog:forging",
+  "ingredient": {
+    "item": "minecraft:redstone_ore"
+  },
+  "blueprint": {
+    "item": "minecraft:redstone"
+  },
+  "processtime": 5,
+  "level": 1,
+  "result": {
+    "item": "minecraft:redstone",
+    "count": 2
+  }
+}

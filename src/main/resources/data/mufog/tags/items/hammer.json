@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#mufog:hammer/level_1",
+    "#mufog:hammer/level_2",
+    "#mufog:hammer/level_3",
+    "#mufog:hammer/level_4"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "hlft.fabric.mufog.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MufogItemMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
