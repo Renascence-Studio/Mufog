@@ -60,6 +60,11 @@ public class ForgingAnvilTile extends BlockEntity implements ForgingAnvilInv {
         return false;
     }
 
+    public void clean() {
+        items.set(0, ItemStack.EMPTY);
+        inventoryChanged();
+    }
+
     public ItemStack getItem() {
         return items.get(0);
     }

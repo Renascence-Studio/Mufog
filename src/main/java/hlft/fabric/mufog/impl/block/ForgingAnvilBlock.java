@@ -190,9 +190,9 @@ public class ForgingAnvilBlock extends BlockWithEntity implements BlockEntityPro
                 float volume = 0.6F;
 
                 if (world.random.nextFloat() <= recipe.getChance()) {
-                    tile.setStack(0, recipe.getOutput());
+                    tile.addItem(recipe.getOutput().copy());
                 } else {
-                    tile.setStack(0, ItemStack.EMPTY);
+                    tile.clean();
                     event = MFSounds.FORGING_FAIL_SOUND;
                     volume = 1.3F;
                 }
