@@ -3,9 +3,10 @@
   "id": "mufog",
   "version": "${version}",
   "name": "Mufog",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "description": "The Smithing System based on Datapack!",
+  "authors": [
+    "Chemiofitor"
+  ],
   "license": "MIT",
   "icon": "assets/mufog/icon.png",
   "environment": "*",
@@ -23,9 +24,6 @@
       "hlft.fabric.mufog.compat.emi.MufogEMIPlugin"
     ]
   },
-  "mixins": [
-    "mufog.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.14.12",
     "fabric": "*",
