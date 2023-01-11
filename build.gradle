@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
+archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
@@ -83,39 +84,18 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId = "${group}"
+            artifactId = "${archivesBaseName}"
+            version = "${project.minecraft_version}-${version}"
             from components.java
-            groupId = project.maven_group
-            artifactId = project.archives_base_name
-            version = project.mod_version
+            pom {
+                name = "${project.pretty_name}"
+                url = "${project.website_url}"
+            }
         }
     }
 
     repositories {
-        maven { url "https://maven.wispforest.io" }
-        maven { url "https://maven.shedaniel.me/" }
 
-        maven {
-            name = "TerraformersMC"
-            url = "https://maven.terraformersmc.com/"
-        }
-
-        maven {
-            url = "https://maven.architectury.dev"
-            content {
-                includeGroup "dev.architectury"
-            }
-        }
-
-        maven {
-            url = "https://maven.saps.dev/minecraft"
-            content {
-                includeGroup "dev.latvian.mods"
-            }
-        }
-        
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
     }
 }
