@@ -95,8 +95,19 @@ public class ForgingREICategory implements DisplayCategory<ForgingREIDisplay> {
         Arrow arrow = Widgets.createArrow(new Point(bgBounds.x + 45 - 9, bgBounds.y + 27 - 4)).animationDurationTicks(20);
         widgets.add(arrow);
 
+        //简单的颜色控制
+        Formatting color;
+        if (display.getHammerTimes() <= 10)
+            color = Formatting.GREEN;
+        else if (display.getHammerTimes() <= 20)
+            color = Formatting.YELLOW;
+        else if (display.getHammerTimes() <= 50)
+            color = Formatting.RED;
+        else
+            color = Formatting.BLACK;
+
         //添加绑定箭头组件位置的Tip
-        widgets.add(Widgets.withTooltip(arrow, new TranslatableText("tip.mufog.manage.hammertimes", display.getHammerTimes()).formatted(Formatting.YELLOW)));
+        widgets.add(Widgets.withTooltip(arrow, new TranslatableText("tip.mufog.manage.hammertimes", display.getHammerTimes()).formatted(color)));
 
         //添加锻造锤槽位
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 5, bgBounds.y + 1))
