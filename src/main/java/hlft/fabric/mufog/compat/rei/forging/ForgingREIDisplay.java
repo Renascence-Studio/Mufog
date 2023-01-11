@@ -31,7 +31,7 @@ public class ForgingREIDisplay extends BasicDisplay {
 
         blueprint = EntryIngredients.ofIngredient(recipe.getBlueprint()).map(stack -> stack.copy().tooltip(new TranslatableText("tip.mufog.manage.blueprint").formatted(Formatting.BLUE)));
 
-        hammer = EntryIngredients.ofItemTag(HammerItem.tagFromLevel(recipe.getLevel()));
+        hammer = EntryIngredients.ofItemTag(HammerItem.makeTagFromLevel(recipe.getLevel()));
         hammerTimes = recipe.getProcesstime();
     }
 

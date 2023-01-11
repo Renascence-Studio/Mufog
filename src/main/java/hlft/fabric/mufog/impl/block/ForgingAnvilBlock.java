@@ -190,6 +190,7 @@ public class ForgingAnvilBlock extends BlockWithEntity implements BlockEntityPro
                 float volume = 0.6F;
 
                 if (world.random.nextFloat() <= recipe.getChance()) {
+                    tile.removeItem();
                     tile.addItem(recipe.getOutput().copy());
                 } else {
                     tile.clean();
@@ -223,7 +224,7 @@ public class ForgingAnvilBlock extends BlockWithEntity implements BlockEntityPro
             if (player != null) {
                 hammer.damage(1, player, user -> user.sendToolBreakStatus(Hand.MAIN_HAND));
                 if (!player.getAbilities().creativeMode) {
-                    player.getItemCooldownManager().set(hammer.getItem(), 30);
+                    player.getItemCooldownManager().set(hammer.getItem(), 40);
                 }
             } else {
                 if (hammer.damage(1, world.getRandom(), null)) {

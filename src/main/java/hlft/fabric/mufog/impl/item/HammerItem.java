@@ -47,15 +47,22 @@ public class HammerItem extends MiningToolItem {
     }
 
     public static TagKey<Item> tagFromLevel(int i) {
-        if (i <= 1) {
+        if (i == 1) {
             return LEVEL_1;
         } else if (i == 2) {
             return LEVEL_2;
         } else if (i == 3) {
             return LEVEL_3;
-        } else {
+        } else if (i == 4) {
             return LEVEL_4;
         }
+        return null;
+    }
+
+    public static TagKey<Item> makeTagFromLevel(int i) {
+        if (tagFromLevel(i) != null)
+            return tagFromLevel(i);
+        return TagKey.of(Registry.ITEM_KEY, asId("hammer/level_" + i));
     }
 
 }

@@ -34,20 +34,10 @@ public class MFForgingHelper {
         tooltip.add(text);
     }
 
-    public static NbtCompound defaultNBT() {
-        NbtCompound nbt = new NbtCompound();
-
-        nbt.putInt("Times", 0);
-        nbt.put("Blueprint", ItemStack.EMPTY.writeNbt(new NbtCompound()));
-        nbt.put("Result", ItemStack.EMPTY.writeNbt(new NbtCompound()));
-        nbt.putFloat("Progress", 0F);
-
-        return nbt;
-    }
-
     public static Text translateChanceTip(float chance) {
         NumberFormat fmt = NumberFormat.getPercentInstance();
         fmt.setMaximumFractionDigits(2);
-        return new TranslatableText("tip.mufog.manage.chance").append(fmt.format(chance)).append(new TranslatableText("tip.mufog.manage.full_stop")).formatted(Formatting.YELLOW);
+        Formatting color = chance < 0.25F ? Formatting.RED : Formatting.YELLOW;
+        return new TranslatableText("tip.mufog.manage.chance").append(fmt.format(chance)).append(new TranslatableText("tip.mufog.manage.full_stop")).formatted(color);
     }
 }

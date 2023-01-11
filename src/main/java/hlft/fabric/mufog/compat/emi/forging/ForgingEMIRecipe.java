@@ -28,16 +28,16 @@ public class ForgingEMIRecipe implements EmiRecipe {
     private final EmiIngredient hammer;
     private final EmiStack output;
     private final float chance;
-    private final int hanmmerTimes;
+    private final int hammerTimes;
 
     public ForgingEMIRecipe(ForgingRecipe recipe) {
         this.id = recipe.getId();
-        this.input = List.of(EmiIngredient.of(recipe.getIngredients().get(0)), EmiIngredient.of(recipe.getBlueprint()), EmiIngredient.of(HammerItem.tagFromLevel(recipe.getLevel())));
+        this.input = List.of(EmiIngredient.of(recipe.getIngredients().get(0)), EmiIngredient.of(recipe.getBlueprint()), EmiIngredient.of(HammerItem.makeTagFromLevel(recipe.getLevel())));
         this.blueprint = input.get(1);
         this.hammer = input.get(2);
         this.output = new ItemEmiStack(recipe.getOutput());
         this.chance = recipe.getChance();
-        this.hanmmerTimes = recipe.getProcesstime();
+        this.hammerTimes = recipe.getProcesstime();
     }
 
     @Override
@@ -81,6 +81,6 @@ public class ForgingEMIRecipe implements EmiRecipe {
             widgets.addTexture(NO_BLUEPRINT, 39, 7).tooltip((x, y) -> List.of(TooltipComponent.of(EmiPort.ordered(new TranslatableText("tip.mufog.manage.no_need_blueprint").formatted(Formatting.GREEN)))));
         }
         widgets.addSlot(input.get(0), 13, 26);
-        widgets.addFillingArrow(46, 27, 20 * 20).tooltip((x, y) -> List.of(TooltipComponent.of(EmiPort.ordered(new TranslatableText("tip.mufog.manage.hammertimes", hanmmerTimes).formatted(Formatting.YELLOW)))));
+        widgets.addFillingArrow(46, 27, 20 * 20).tooltip((x, y) -> List.of(TooltipComponent.of(EmiPort.ordered(new TranslatableText("tip.mufog.manage.hammertimes", hammerTimes).formatted(Formatting.YELLOW)))));
     }
 }
