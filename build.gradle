@@ -10,11 +10,7 @@ group = project.maven_group
 repositories {
     maven { url "https://maven.wispforest.io" }
     maven { url "https://maven.shedaniel.me/" }
-
-    maven {
-        name = "TerraformersMC"
-        url = "https://maven.terraformersmc.com/"
-    }
+    maven { url = "https://maven.terraformersmc.com/" }
 
     maven {
         url = "https://maven.architectury.dev"
@@ -60,12 +56,19 @@ processResources {
 def targetJavaVersion = 17
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-    it.options.release = 17
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        it.options.release = targetJavaVersion
+    }
 }
 
 java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+    archivesBaseName = project.archives_base_name
+
     withSourcesJar()
-    withJavadocJar()
 }
 
 jar {
