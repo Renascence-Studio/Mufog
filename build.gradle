@@ -91,6 +91,31 @@ publishing {
     }
 
     repositories {
+        maven { url "https://maven.wispforest.io" }
+        maven { url "https://maven.shedaniel.me/" }
 
+        maven {
+            name = "TerraformersMC"
+            url = "https://maven.terraformersmc.com/"
+        }
+
+        maven {
+            url = "https://maven.architectury.dev"
+            content {
+                includeGroup "dev.architectury"
+            }
+        }
+
+        maven {
+            url = "https://maven.saps.dev/minecraft"
+            content {
+                includeGroup "dev.latvian.mods"
+            }
+        }
+        
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
     }
 }
