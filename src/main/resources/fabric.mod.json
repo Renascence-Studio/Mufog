@@ -7,6 +7,11 @@
   "authors": [
     "Chemiofitor"
   ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/mufog",
+    "issues": "https://github.com/Renascence-Studio/Mufog/issues",
+    "sources": "https://github.com/Renascence-Studio/Mufog"
+  },
   "license": "MIT",
   "icon": "assets/mufog/icon.png",
   "environment": "*",
@@ -28,5 +33,12 @@
     "fabricloader": ">=0.14.12",
     "fabric": "*",
     "minecraft": "1.18.2"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.mufog.mcmod": "https://www.mcmod.cn/class/8791.html"
+      }
+    }
   }
 }
